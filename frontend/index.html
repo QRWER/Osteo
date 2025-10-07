@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Empowered Harmony</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #F4EFED;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .header img {
+            height: 100px;
+        }
+
+        .button {
+            background: #4D5145;
+            color: #fff;
+            border: none;
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            background: #4D5145;
+            color: #fff;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-left: 60px;
+        }
+
+        .hero-content h1 {
+            margin: 0 0 18px 0;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .hero-image {
+            flex: 0 0 350px;
+            padding-right: 60px;
+        }
+
+        .hero-image img {
+            width: 340px;
+        }
+
+
+        .about-you {
+            background: #F4EFED;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .about-wrapper {
+            padding: 0px 120px;
+        }
+
+        .about-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 16px;
+        }
+
+        .about-title {
+            font-size: 28px;
+            margin: 0 0 24px 0;
+            color: #4D5145;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .card {
+            background: #4D5145;
+            color: #fff;
+            border-radius: 6px;
+            min-width: 180px;
+            min-height: 80px;
+            padding: 24px 16px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-you {
+            position: relative;
+            /* опорный контекст для узоров */
+            background: #F4EFED;
+            text-align: center;
+            padding: 32px 0;
+            overflow: hidden;
+            /* не выходить за границы блока */
+        }
+
+        .pattern {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 120px;
+            background-image: url('pattern.png');
+            background-repeat: repeat-y;
+            background-size: contain;
+            /* подгон по ширине узора */
+        }
+
+        .pattern-left {
+            left: 0;
+            background-position: left top;
+        }
+
+        .pattern-right {
+            right: 0;
+            background-position: right top;
+        }
+
+
+        .intro-me {
+            background: #F4EFED;
+            color: #4D5145;
+            padding: 16px;
+        }
+
+        .intro-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .intro-logo {
+            height: 64px;
+        }
+
+        .intro-title {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .intro-row {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .intro-text {
+            flex: 1 1 280px;
+            margin: 0;
+        }
+
+        .intro-photo {
+            flex: 1 1 240px;
+            max-width: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="logo.png" alt="Логотип">
+        <button class="button">Вернуть себе себя/Получить консультацию</button>
+    </div>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Устали носить маску успеха, когда внутри — пустота и выгорание?</h1>
+            <p>Я помогаю успешным женщинам собрать себя воедино: вернуть энергию,
+                наладить отношения и снова радоваться жизни, не бросая бизнес.</p>
+        </div>
+        <div class="hero-image">
+            <img src="image.jpg" alt="Мотивирующее фото">
+        </div>
+    </div>
+
+    <section class="about-you">
+        <div class="pattern pattern-left" aria-hidden="true"></div>
+        <div class="pattern pattern-right" aria-hidden="true"></div>
+
+        <div class="about-wrapper">
+            <img class="about-logo" src="logo.png" alt="Логотип">
+
+            <h2 class="about-title">Это про вас?</h2>
+
+            <div class="cards">
+                <div class="card">Со стороны у вас «все есть», а внутри — тревога и чувство, что вы «не свою жизнь»
+                    живете.</div>
+                <div class="card">Вы разрываетесь между бизнесом, семьей и заботой о других, а на себя сил не остается.
+                </div>
+                <div class="card">Вы пробовали психологов, отдых, спорт, но возвращались к тому же состоянию.
+                    Потому что работали со следствием, а не с причиной.</div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="about-you">
+
+        <div class="pattern pattern-left" aria-hidden="true"></div>
+        <div class="pattern pattern-right" aria-hidden="true"></div>
+
+        <div class="about-wrapper">
+            <img class="about-logo" src="logo.png" alt="Логотип">
+
+            <h2 class="about-title">Я не буду заставлять вас «мыслить позитивно». Мы найдем корень проблемы и уберем
+                его.</h2>
+
+            <div class="cards">
+                <div class="card">Собираем пазл: Мы смотрим на вашу жизнь целостно: здоровье, мысли, отношения, энергия.
+                    Находим, какая часть «выпала»и портит всю картину.</div>
+                <div class="card"> Находим корень: С помощью моих знаний (остеопатия, психология, работа с энергией)
+                    мы находим истинную причину«сбоя» — часто она надежно спрятана в теле или в старых убеждениях.</div>
+                <div class="card"> Запускаем изменения: Мы мягко и безопасно убираем этот «сбой».
+                    Вы получаете не временное облегчение, а устойчивоесостояние гармонии, которое само начинает
+                    притягивать позитивные изменения во всем.</div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="about-you">
+        <div class="pattern pattern-left" aria-hidden="true"></div>
+        <div class="pattern pattern-right" aria-hidden="true"></div>
+
+        <div class="about-wrapper">
+            <img class="about-logo" src="logo.png" alt="Логотип">
+
+            <h2 class="about-title">Они уже собрали свою целостную жизнь</h2>
+
+            <div class="cards">
+                <div class="card"> Было: Постоянная усталость, срывы на близких, бизнес стоял.</div>
+                <div class="card">Процесс: Нашли, что усталость была следствием старого страха, который «жил» в теле.
+                </div>
+                <div class="card">Стало: Энергии хватает на все, отношения с мужем стали глубже, бизнес вырос на 50%.
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="intro-me">
+        <div class="intro-head">
+            <img src="logo.png" alt="Логотип" class="intro-logo">
+            <div class="intro-actions">
+                <button class="button">Home</button>
+                <button class="button">Our Projects</button>
+            </div>
+        </div>
+
+        <h1 class="intro-title">Познакомимся?</h1>
+
+        <div class="intro-row">
+            <p class="intro-text">Меня зовут [Имя]. Я тоже прошла через выгорание и ощущение, что живу не свою жизнь.
+                Моя цель — быть проводником для таких же ярких женщин, как вы, на пути назад к себе — цельной,
+                гармоничной и полной сил.</p>
+            <img src="image2.jpg" alt="Фото обо мне" class="intro-photo">
+        </div>
+    </section>
+
+
+    <section class="about-you">
+        
+        <div class="pattern pattern-left" aria-hidden="true"></div>
+        <div class="pattern pattern-right" aria-hidden="true"></div>
+
+        <img class="about-logo" src="logo.png" alt="Логотип">
+
+        <h2 class="about-title">Сделайте первый шаг</h2>
+
+        <button class="button">Записаться</button>
+
+
+    </section>
+
+</body>
+
+</html>
