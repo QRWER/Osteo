@@ -5,18 +5,285 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <title>Empowered Harmony</title>
+<<<<<<< HEAD
+=======
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: #F4EFED;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: #fff;
+        }
+
+        .header img {
+            height: 100px;
+        }
+
+        .button {
+            background: #4D5145;
+            color: #fff;
+            border: none;
+            padding: 16px 28px;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button:hover {
+            background: #3a3d33;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            background: #4D5145;
+            color: #fff;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-left: 60px;
+        }
+
+        .hero-content h1 {
+            margin: 0 0 18px 0;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .hero-image {
+            flex: 0 0 350px;
+            padding-right: 60px;
+        }
+
+        .hero-image img {
+            width: 340px;
+        }
+
+        .about-you {
+            background: #F4EFED;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .about-wrapper {
+            padding: 0px 120px;
+        }
+
+        .about-logo {
+            width: 80px;
+            height: auto;
+            margin-bottom: 16px;
+        }
+
+        .about-title {
+            font-size: 28px;
+            margin: 0 0 24px 0;
+            color: #4D5145;
+        }
+
+        .cards {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .card {
+            background: #4D5145;
+            color: #fff;
+            border-radius: 6px;
+            min-width: 180px;
+            min-height: 80px;
+            padding: 24px 16px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-you {
+            position: relative;
+            background: #F4EFED;
+            text-align: center;
+            padding: 32px 0;
+            overflow: hidden;
+        }
+
+        .pattern {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 120px;
+            background-image: url('pattern.png');
+            background-repeat: repeat-y;
+            background-size: contain;
+        }
+
+        .pattern-left {
+            left: 0;
+            background-position: left top;
+        }
+
+        .pattern-right {
+            right: 0;
+            background-position: right top;
+        }
+
+        .intro-me {
+            background: #F4EFED;
+            color: #4D5145;
+            padding: 16px;
+        }
+
+        .intro-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .intro-logo {
+            height: 64px;
+        }
+
+        .intro-title {
+            margin: 16px 0;
+            text-align: center;
+        }
+
+        .intro-row {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .intro-text {
+            flex: 1 1 280px;
+            margin: 0;
+        }
+
+        .intro-photo {
+            flex: 1 1 240px;
+            max-width: 320px;
+        }
+
+        /* Стили для модального окна */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: #F4EFED;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #4D5145;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4D5145;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #4D5145;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3a3d33;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #4D5145;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #3a3d33;
+        }
+
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #4D5145;
+            font-size: 18px;
+        }
+    </style>
+>>>>>>> 3e45d9a2f61c8235d01d4e36ad6ab96e831d316f
 </head>
 
 <body>
     <div class="cover">
     <div class="header">
         <img src="logo.png" alt="Логотип">
+<<<<<<< HEAD
         <div class="links-container">
             <a href="#"> Обо мне</a>
             <a href="#"> Как это работает</a>
             <a href="#"> Услуги</a>
         </div>
         <button class="button">Вернуть себе себя/Получить консультацию</button>
+=======
+        <button class="button" onclick="openModal()">Вернуть себе себя/Получить консультацию</button>
+>>>>>>> 3e45d9a2f61c8235d01d4e36ad6ab96e831d316f
     </div>
     <div class="hero">
         <div class="hero-content">
@@ -149,6 +416,7 @@
 
         <!-- <img class="about-logo" src="logo.png" alt="Логотип"> -->
 
+<<<<<<< HEAD
         <div class="about-wrapper" style="margin: 20vh;">
             <h2 class="about-title">Сделайте первый шаг</h2>
             <div class="cases">
@@ -156,8 +424,78 @@
             </div>
         </div>
 
+=======
+        <h2 class="about-title">Сделайте первый шаг</h2>
+
+        <button class="button" onclick="openModal()">Записаться</button>
+>>>>>>> 3e45d9a2f61c8235d01d4e36ad6ab96e831d316f
 
     </section>
+
+    <div id="appointmentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 style="text-align: center; color: #4D5145; margin-bottom: 25px;">Записаться на консультацию</h2>
+            
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="name">Ваше имя:</label>
+                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Номер телефона:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                </div>
+                
+                <button type="submit" class="submit-btn">Подтвердить запись</button>
+            </form>
+            
+            <div id="successMessage" class="success-message">
+                <h3>Спасибо за заявку!</h3>
+                <p>Мы свяжемся с вами в ближайшее время для подтверждения записи.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('appointmentModal');
+        const form = document.getElementById('appointmentForm');
+        const successMessage = document.getElementById('successMessage');
+
+        function openModal() {
+            modal.style.display = 'block';
+            form.reset();
+            form.style.display = 'block';
+            successMessage.style.display = 'none';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            console.log('Данные формы:', { name, phone });
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+            setTimeout(function() {
+                closeModal();
+            }, 3000);
+        });
+
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            e.target.value = '+7' + (x[2] ? ' (' + x[2] : '') + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+        });
+    </script>
 
 </body>
 
