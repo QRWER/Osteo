@@ -4,7 +4,14 @@ require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const config = {
   server: {
     port: process.env.PORT,
-    nodeEnv: process.env.NODE_ENV
+    nodeEnv: process.env.NODE_ENV,
+    corsOrigin: process.env.CORS_ORIGIN
+  },
+  business: {
+    time: {
+      startWorking: process.env.START_WORKING || '09:00',
+      endWorking: process.env.END_WORKING || '18:00'
+    }
   },
   auth: {
     jwtSecret: process.env.JWT_SECRET,
