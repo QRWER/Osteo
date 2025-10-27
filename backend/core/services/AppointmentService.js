@@ -36,6 +36,94 @@ class AppointmentService {
     };
   }
 
+  /**
+ * Модуль для работы с записями на прием (appointments)
+ * Соответствует структуре SQL таблицы appointments
+ */
+
+/**
+ * Валидирует объект записи на прием
+ * @param {Object} appointment - Объект записи для валидации
+ * @returns {Array} Массив ошибок, пустой если ошибок нет
+ */
+function validateAppointment(appointment) {
+    const errors = [];
+    
+    if (!appointment.client_name || appointment.client_name.trim() === "") {
+        errors.push("client_name is required");
+    }
+    
+    if (!appointment.client_email || appointment.client_email.trim() === "") {
+        errors.push("client_email is required");
+    } else if (!isValidEmail(appointment.client_email)) {
+        errors.push("client_email is not valid");
+    }
+    
+    if (!appointment.appointment_date || !(appointment.appointment_date instanceof Date)) {
+        errors.push("appointment_date is required and must be a Date object");
+    }
+    
+    const validStatuses = ['pending', 'confirmed', 'cancelled'];
+    if (appointment.status && !validStatuses.includes(appointment.status)) {
+        errors.push("status must be one of: " + validStatuses.join(", "));
+    }
+    
+    return errors;
+}
+
+/**
+ * Обрабатывает объект записи на прием (основная функция)
+ * @param {Object} appointment - Объект записи
+ * @returns {Object} Результат обработки { success: boolean, data: Object, errors: Array }
+ */
+function processAppointment(appointment) {
+    // Валидация
+    const validationErrors = validateAppointment(appointment);
+    
+    if (validationErrors.length > 0) {
+        return {
+            success: false,
+            data: null,
+            errors: validationErrors
+        };
+    }
+    
+    // Обработка валидного объекта
+    const processedAppointment = {
+        ...appointment,
+        updated_at: new Date() // Обновляем временную метку
+    };
+    
+    // Если нет created_at, устанавливаем текущее время
+    if (!processedAppointment.created_at) {
+        processedAppointment.created_at = new Date();
+    }
+    
+    return {
+        success: true,
+        data: processedAppointment,
+        errors: []
+    };
+}
+
+/**
+ * Проверяет валидность email формата
+ * @param {string} email - Email для проверки
+ * @returns {boolean} true если email валиден
+ */
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Экспорт функций для использования в других модулях
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        validateAppointment,
+        processAppointment,
+        isValidEmail
+    };
+}
 
   generateAllDaySlots(workingHours, duration) {
     console.log(workingHours)
