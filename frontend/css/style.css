@@ -292,15 +292,18 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
 }
 
 .modal-content {
   background-color: #F4EFED;
-  margin: 15% auto;
-  padding: 30px;
+  margin: 2% auto;
+  padding: 25px;
   border-radius: 15px;
   width: 90%;
-  max-width: 400px;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   position: relative;
 }
@@ -320,22 +323,23 @@ body {
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   color: #4D5145;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .form-group input {
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border: 2px solid #4D5145;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   box-sizing: border-box;
 }
 
@@ -346,14 +350,15 @@ body {
 
 .submit-btn {
   width: 100%;
-  padding: 15px;
+  padding: 12px;
   background: #4D5145;
   color: white;
   border: none;
   border-radius: 8px;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 15px;
 }
 
 .submit-btn:hover {
@@ -365,5 +370,146 @@ body {
   text-align: center;
   padding: 20px;
   color: #4D5145;
-  font-size: 18px;
+  font-size: 16px;
+}
+
+/* Стили для календаря */
+.calendar-container {
+  margin: 15px 0;
+  border: 2px solid #4D5145;
+  border-radius: 10px;
+  padding: 12px;
+  background: white;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+.calendar-nav {
+  background: #4D5145;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-nav:hover {
+  background: #3a3d33;
+}
+
+.calendar-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4D5145;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: bold;
+  color: #4D5145;
+  padding: 6px;
+  font-size: 12px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  padding: 8px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  font-size: 13px;
+}
+
+.calendar-day:hover {
+  background: #e9ecef;
+}
+
+.calendar-day.selected {
+  background: #4D5145;
+  color: white;
+}
+
+.calendar-day.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  background: #f8f9fa;
+}
+
+.calendar-day.disabled:hover {
+  background: #f8f9fa;
+}
+
+.calendar-day.today {
+  border: 2px solid #4D5145;
+}
+
+.time-slots {
+  margin-top: 15px;
+  display: none;
+}
+
+.time-slots h4 {
+  color: #4D5145;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.time-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.time-btn {
+  padding: 8px 4px;
+  border: 1px solid #4D5145;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 12px;
+}
+
+.time-btn:hover {
+  background: #e9ecef;
+}
+
+.time-btn.selected {
+  background: #4D5145;
+  color: white;
+}
+
+.selected-date-time {
+  margin-top: 12px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #4D5145;
+  display: none;
+  font-size: 13px;
 }
