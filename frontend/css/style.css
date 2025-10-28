@@ -30,7 +30,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 20px;
+  padding: 10px 20px;
   background: #F6F1ED;
 }
 
@@ -151,12 +151,15 @@ body {
   align-items: center;
   flex-direction: column;
   display: flex;
-  justify-content: space-around;
-  padding: 0px 120px;
+  /* justify-content: space-around; */
+  gap: 1vh;
+  padding: 0px 120px 40px 120px;
+  height: 100vh;
 }
 
 .about-wrapper p {
   color: rgba(117, 117, 117, 255);
+  font-size: 120%;
 }
 
 .about-people {
@@ -174,6 +177,10 @@ body {
   margin-bottom: 16px;
 }
 
+.about-text{
+  width: 50%;
+}
+
 .about-title-little {
   flex-direction: row;
   font-size: 5vw;
@@ -189,26 +196,66 @@ body {
 }
 
 .cards {
-  height: 28vh;
+  /* height: 28vh; */
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
   gap: 2vw;
-  margin-bottom: 2vh;
+  /* margin-bottom: 55px; */
 }
 
 .card {
-  background: #4D5145;
-  color: #fff;
-  border-radius: 30px;
-  min-width: 180px;
-  min-height: 80px;
-  padding: 24px 16px;
-  font-size: 3vh;
+  width: 24%;
+  height: 50vh;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4% 2%;
+  border-radius: 25.90999984741211px 25.90999984741211px 25.90999984741211px 25.90999984741211px;
+  box-shadow: 0px 6.480000019073486px 54.900001525878906px 0px rgba(254, 191, 176, 0.3);
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.card h3 {
+  font-size: 26.90999984741211px;
+  font-weight: 700;
+  font-size: 150%;
+  text-align: center;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0px;
+}
+
+.card p {
+  font-size: 21.43000030517578px;
+  /* font-family: Inter; */
+  font-size: 120%;
+  font-weight: 400;
+  text-align: center;
+  line-height: 100%;
+  color: rgba(117, 117, 117, 1);
+  height: auto;
+  margin: 0px;
+}
+
+.card-image-wrapper {
+  width: 40%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 25px 25px 25px 25px;
+  background-color: rgba(254, 191, 176, 0.30000001192092896);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.card-image-wrapper img {
+  width: 71px;
+  height: 71px;
 }
 
 .little {
@@ -220,7 +267,6 @@ body {
   padding: 5vh 0;
   position: relative;
   text-align: center;
-  overflow: hidden;
 }
 
 .pattern {
