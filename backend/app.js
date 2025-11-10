@@ -8,6 +8,11 @@ const AppointmentService = require('./core/services/AppointmentService');
 const AppointmentController = require('./infrastructure/controllers/AppointmentController');
 const appointmentRoutes = require('./infrastructure/routes/appointments');
 
+const SQLiteReviewRepository = require('./infrastructure/db/repositories/SQLiteReviewRepository');
+const ReviewService = require('./core/services/ReviewService');
+const ReviewController = require('./infrastructure/controllers/ReviewController');
+const reviewRoutes = require('./infrastructure/routes/reviews');
+
 class App {
   constructor() {
     this.app = express();
@@ -21,6 +26,10 @@ class App {
     this.appointmentRepo = new SQLiteAppointmentRepository(config.database.url);
     this.appointmentService = new AppointmentService(this.appointmentRepo);
     this.appointmentController = new AppointmentController(this.appointmentService);
+
+    this.reviewRepo = new SQLiteReviewRepository(config.database.url);
+    this.reviewService = new ReviewService(this.reviewRepo);
+    this.reviewController = new ReviewController(this.reviewService);
   }
 
   setupMiddleware() {
@@ -42,15 +51,16 @@ class App {
 
   setupRoutes() {
     this.app.use('/api/appointments', appointmentRoutes(this.appointmentController));
+    this.app.use('/api/reviews', reviewRoutes(this.reviewController));
 
     this.app.get('/health', (req, res) => {
-      res.json({ 
-        status: 'OK', 
+      res.json({
+        status: 'OK',
         timestamp: new Date().toISOString(),
-        service: 'Appointment API'
+        service: 'Appointment + Reviews API'
       });
     });
-
+    
     this.app.use('*', (req, res) => {
       res.status(404).json({ error: 'Маршрут не найден' });
     });
