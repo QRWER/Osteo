@@ -1,42 +1,556 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #fff;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.links-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2%;
+  width: 50vw;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.links-container a,
+.links-container a:visited {
+  margin: 0 10px;
+  /* добавит пространство слева и справа у каждой ссылки */
+  text-decoration: none;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header {
+  flex: 0 0 auto;
+  /* фиксированная высота (например, по контенту или жестко) */
+  height: 10vh;
+  /* или padding + контент */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 20px;
+  background: #F6F1ED;
+}
+
+.header-text {
+  font-size: 24px;
+  /* font-family: Open Sans; */
+  font-weight: 700;
+  color: rgba(61, 90, 91, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.cover {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header img {
+  height: 100px;
+}
+
+.button {
+  background: rgba(61, 90, 91, 1);
+  color: #fff;
+  border: none;
+  padding: 1% 0.5%;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 15vw;
+  right: 0.5vw;
+}
+
+.hero {
+  flex: 1 1 auto;
+  /* занимает оставшуюся высоту */
+  display: flex;
+  justify-content: space-between;
+  height: 80vh;
+  background: #F6F1ED;
+}
+
+.hero-content {
+  flex-basis: 70%;
+  margin: 1vh 3vw;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-content h1 {
+  /* font-family: "Plus Jakarta Sans"; */
+  font-weight: 700;
+  line-height: 100%;
+  color: rgb(61, 90, 91);
+  width: 100%;
+  height: auto;
+  position: relative;
+  flex-shrink: 0;
+  overflow-y: hidden;
+  flex-grow: 0;
+  font-size: 50px;
+  /* overflow-wrap: break-word;
+    hyphens: auto; */
+}
+
+.hero-content p {
+  margin: 0;
+
+  font-size: 23px;
+  /* font-family: Inter; */
+  font-weight: 400;
+  line-height: 100%;
+  color: rgba(117, 117, 117, 255);
+  width: 100%;
+  height: auto;
+  position: relative;
+  flex-shrink: 0;
+  overflow-y: hidden;
+  flex-grow: 0;
+}
+
+.hero-image {
+  flex: 1 1 auto;
+  display: flex;
+  flex-basis: 30%;
+  justify-content: flex-end;
+  /* размещает изображение справа */
+  align-items: flex-end;
+  /* размещение по нижнему краю, если нужно */
+  height: 100%;
+  /* чтобы занять полную высоту контейнера */
+}
+
+.hero-image img {
+  /* занимает всю ширину блока */
+  height: 100%;
+  /* занимает всю высоту блока */
+  object-fit: cover;
+  /* сохраняет пропорции и заполняет блок */
+}
+
+.cover .about-you {
+  display: flex;
+}
+
+
+.cases .button {
+  position: relative;
+  padding: 5%;
+
+}
+
+.about-wrapper {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  /* justify-content: space-around; */
+  gap: 1vh;
+  padding: 0px 120px 40px 120px;
+  height: 100vh;
+}
+
+.about-wrapper p {
+  color: rgba(117, 117, 117, 255);
+  font-size: 120%;
+}
+
+.about-people {
+  flex-direction: row;
+  min-width: 25vw;
+  max-width: 50vw;
+  height: auto;
+  /* margin-bottom: 2vh; */
+}
+
+.about-logo {
+  flex-direction: row;
+  width: 80px;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.about-text{
+  width: 50%;
+}
+
+.about-title-little {
+  flex-direction: row;
+  font-size: 5vw;
+  margin: 0;
+  color: rgba(61, 90, 91, 1);
+}
+
+.about-title {
+  flex-direction: row;
+  font-size: 3vw;
+  margin: 0 0 24px 0;
+  color: #4D5145;
+}
+
+.cards {
+  /* height: 28vh; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 2vw;
+  /* margin-bottom: 55px; */
 }
 
 .card {
-  padding: 2em;
+  width: 24%;
+  height: 50vh;
+  position: relative;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 4% 2%;
+  border-radius: 25.90999984741211px 25.90999984741211px 25.90999984741211px 25.90999984741211px;
+  box-shadow: 0px 6.480000019073486px 54.900001525878906px 0px rgba(254, 191, 176, 0.3);
+  background-color: rgba(255, 255, 255, 1);
 }
 
-.read-the-docs {
-  color: #888;
+.card h3 {
+  font-size: 26.90999984741211px;
+  font-weight: 700;
+  font-size: 150%;
+  text-align: center;
+  line-height: 100%;
+  color: rgba(0, 0, 0, 1);
+  margin: 0px;
+}
+
+.card p {
+  font-size: 21.43000030517578px;
+  /* font-family: Inter; */
+  font-size: 120%;
+  font-weight: 400;
+  text-align: center;
+  line-height: 100%;
+  color: rgba(117, 117, 117, 1);
+  height: auto;
+  margin: 0px;
+}
+
+.card-image-wrapper {
+  width: 40%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 25px 25px 25px 25px;
+  background-color: rgba(254, 191, 176, 0.30000001192092896);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image-wrapper img {
+  width: 71px;
+  height: 71px;
+}
+
+.little {
+  font-size: 2.5vh;
+}
+
+.about-you {
+  height: 100vh;
+  padding: 5vh 0;
+  position: relative;
+  text-align: center;
+}
+
+.pattern {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  background-repeat: repeat-y;
+  background-size: contain;
+  /* подгон по ширине узора */
+}
+
+.pattern-left {
+  left: 0;
+  background-position: left top;
+}
+
+.pattern-right {
+  right: 0;
+  background-position: right top;
+}
+
+.intro-me {
+  background: #F4EFED;
+  color: #4D5145;
+  padding: 16px;
+}
+
+.intro-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.intro-logo {
+  height: 64px;
+}
+
+.intro-title {
+  margin: 16px 0;
+  text-align: center;
+}
+
+.intro-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.intro-text {
+  flex: 1 1 280px;
+  margin: 0;
+}
+
+
+.intro-photo {
+  flex: 1 1 240px;
+}
+
+/* Стили для модального окна */
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: #F4EFED;
+  margin: 2% auto;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #4D5145;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #4D5145;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #4D5145;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #3a3d33;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #4D5145;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 15px;
+}
+
+.submit-btn:hover {
+  background: #3a3d33;
+}
+
+.success-message {
+  text-align: center;
+  padding: 20px;
+  color: #4D5145;
+  font-size: 16px;
+}
+
+/* Стили для календаря */
+.calendar-container {
+  margin: 15px 0;
+  border: 2px solid #4D5145;
+  border-radius: 10px;
+  padding: 12px;
+  background: white;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+
+.calendar-nav {
+  background: #4D5145;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-nav:hover {
+  background: #3a3d33;
+}
+
+.calendar-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #4D5145;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.weekday {
+  text-align: center;
+  font-weight: bold;
+  color: #4D5145;
+  padding: 6px;
+  font-size: 12px;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.calendar-day {
+  padding: 8px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+  font-size: 13px;
+}
+
+.calendar-day:hover {
+  background: #e9ecef;
+}
+
+.calendar-day.selected {
+  background: #4D5145;
+  color: white;
+}
+
+.calendar-day.disabled {
+  color: #ccc;
+  cursor: not-allowed;
+  background: #f8f9fa;
+}
+
+.calendar-day.disabled:hover {
+  background: #f8f9fa;
+}
+
+.calendar-day.today {
+  border: 2px solid #4D5145;
+}
+
+.time-slots {
+  margin-top: 15px;
+}
+
+.time-slots h4 {
+  color: #4D5145;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.time-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.time-btn {
+  padding: 8px 4px;
+  border: 1px solid #4D5145;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 12px;
+}
+
+.time-btn:hover {
+  background: #e9ecef;
+}
+
+.time-btn.selected {
+  background: #4D5145;
+  color: white;
+}
+
+.selected-date-time {
+  margin-top: 12px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #4D5145;
+  font-size: 13px;
 }

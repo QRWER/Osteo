@@ -103,7 +103,14 @@ function App() {
             alert('Пожалуйста, выберите дату и время');
             return;
         }
+        if (phone.length !== 18) {
+            console.log(phone.length)
+            alert('Введите номер телефона')
+            return;
+        }
 
+
+        setPhone('')
         console.log('Запись:', { name, phone, date: selectedDate, time: selectedTime });
         setShowSuccess(true);
 
@@ -139,7 +146,6 @@ function App() {
         const rawValue = input.value;
         const digits = rawValue.replace(/\D/g, '');
 
-        // Если удаляем символы, не применяем форматирование
         if (rawValue.length < phone.length) {
             setPhone(rawValue);
             return;
@@ -149,7 +155,6 @@ function App() {
         setPhone(formatted);
     };
 
-    // Месяцы для заголовка
     const monthNames = [
         'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
         'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
@@ -243,7 +248,6 @@ function App() {
                 <h2 className="about-title">Сделайте первый шаг</h2>
 
                 <button className="button" onClick={openModal}>Записаться</button>
-
             </section>
 
             {isModalOpen &&
@@ -252,7 +256,7 @@ function App() {
                     <span className="close" onClick={closeModal}>&times;</span>
                     <h2 className="intro-modal">Записаться на
                         консультацию</h2>
-                    {!showSuccess? (
+                    {!showSuccess ? (
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="name">Ваше имя:</label>
@@ -271,14 +275,12 @@ function App() {
                                 <button type="button" className="calendar-nav" onClick={handleNextWeek}>→</button>
                             </div>
 
-                            {/* Только названия дней недели — СТАТИЧНЫЕ */}
                             <div className="calendar-weekdays">
                                 {['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'].map(day => (
                                     <div key={day} className="weekday">{day}</div>
                                 ))}
                             </div>
 
-                            {/* Даты — ДИНАМИЧЕСКИЕ */}
                             <div className="calendar-days">
                                 {weekDays.map((day, idx) => {
                                     const dayOnly = new Date(day);
@@ -289,7 +291,7 @@ function App() {
 
                                     return (
                                         <div
-                                            key={`${dayOnly.toISOString().split('T')[0]}-${idx}`} // лучше уникальный ключ
+                                            key={`${dayOnly.toISOString().split('T')[0]}-${idx}`}
                                             className={`calendar-day ${isToday ? 'today' : ''} ${isSelected ? 'selected' : ''} ${isPast ? 'disabled' : ''}`}
                                             onClick={() => !isPast && handleDateSelect(day)}
                                         >
@@ -299,7 +301,6 @@ function App() {
                                 })}
                             </div>
                         </div>
-
 
                         {selectedDate && (
                             <div className="time-slots">
