@@ -10,7 +10,6 @@ function App() {
     const modalRef = useRef(null);
     const [phone, setPhone] = useState('');
 
-    // Открытие модалки
     const openModal = () => {
         setIsModalOpen(true);
         setSelectedDate(null);
@@ -18,12 +17,11 @@ function App() {
         setShowSuccess(false);
     };
 
-    // Закрытие модалки
     const closeModal = () => {
         setIsModalOpen(false);
+        setPhone('');
     };
 
-    // Закрытие по клику вне модалки
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -40,7 +38,6 @@ function App() {
         };
     }, [isModalOpen]);
 
-    // Генерация недели для календаря
     const getWeekDays = (baseDate) => {
         const day = new Date(baseDate);
         const dayOfWeek = day.getDay();
@@ -95,7 +92,7 @@ function App() {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const name = e.target.name.value;
 
@@ -104,15 +101,45 @@ function App() {
             return;
         }
         if (phone.length !== 18) {
-            console.log(phone.length)
-            alert('Введите номер телефона')
+            alert('Введите корректный номер телефона');
             return;
         }
 
+        const [hours, minutes] = selectedTime.split(':').map(Number);
+        const fullDate = new Date(selectedDate);
+        fullDate.setHours(hours, minutes, 0, 0);
+        const appointmentDate = fullDate.toISOString();
 
-        setPhone('')
-        console.log('Запись:', { name, phone, date: selectedDate, time: selectedTime });
-        setShowSuccess(true);
+        const appointmentData = {
+            client_name: name,
+            client_phone : phone, //возможно надо будет заменить на почту
+            appointment_date: appointmentDate,
+        };
+
+        try {
+            const response = await fetch('https://formspree.io/f/xkgkebwg', { //Заменить ссылку на бек
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(appointmentData),
+            });
+
+            if (response.ok) {
+                console.log('Запись успешно отправлена');
+                setShowSuccess(true);
+            } else {
+                console.error('Ошибка при отправке заявки');
+                alert('Произошла ошибка при отправке. Попробуйте позже.');
+                closeModal();
+                return;
+            }
+        } catch (error) {
+            console.error('Сетевая ошибка:', error);
+            alert('Не удалось подключиться к серверу. Проверьте соединение.');
+            closeModal();
+            return;
+        }
 
         setTimeout(() => {
             closeModal();
